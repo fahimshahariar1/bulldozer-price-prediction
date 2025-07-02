@@ -11,3 +11,5 @@ Some of the important Data are
 * Test.csv is the test set, which won't be released until the last week of the competition. It contains data from May 1, 2012 - November 2012. Your score on the test set determines your final rank for the competition.
 ## 3. Evaluation
 The evaluation metric for this competition is the RMSLE (root mean squared log error) between the actual and predicted auction prices.
+## 4. Feature:
+> Kaggle provides a data dictionary detailing all of the features of the dataset that you can view here: https://docs.google.com/spreadsheets/d/15BRJM7E4vBXZfs_xqV-hDMagQChiRPyrdzN96NXCE50/edit?usp=sharing
