@@ -32,3 +32,5 @@ Then if we recheck the data you'll see it has a different type for the saledate 
 and now if we check the scatter again, we will see it has better distribution
 
 ![image](https://github.com/user-attachments/assets/a3ae1e96-f22f-4440-a653-a9e13b39624e)
+### Sort the dataframe by saleDate
+> When working with time series data, its good idea to sort it by date
