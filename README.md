@@ -19,8 +19,15 @@ Importing training and validation sets
 df = pd.read_csv("bluebook-for-bulldozers/TrainAndValid.csv",low_memory=False)
 df.info()
 Then we explore our dataset, if it has any null values, or compare the saledate with the SalePrice column and plot it to check the output 
+![image](https://github.com/user-attachments/assets/15bc34b6-7a84-44d8-bfb1-7a71ee2677b6)
+See at the bottom, the saleDate column mixed because it has a different type like object
+
 ![image](https://github.com/user-attachments/assets/0726b9a3-3ca5-4484-a336-1bdc5e926ae3)
 ### Parsing Dates
 When we work with time series data, we want to enrich the time and date component as much as possible
 >We can do that by telling pandas which of our columns has dates in it using the `parse_date` parameter
+>parse_date is a function that converts a string representation of a date into a date object
 Now we will import the dataset again but this time with parse_date parameter
+Then if we recheck the data you'll see it has a different type for the saledate column
+and now if we check the scatter again, we will see it has better distribution
+>![image](https://github.com/user-attachments/assets/a3ae1e96-f22f-4440-a653-a9e13b39624e)
