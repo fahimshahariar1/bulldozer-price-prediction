@@ -30,4 +30,5 @@ When we work with time series data, we want to enrich the time and date componen
 Now we will import the dataset again but this time with parse_date parameter
 Then if we recheck the data you'll see it has a different type for the saledate column
 and now if we check the scatter again, we will see it has better distribution
->![image](https://github.com/user-attachments/assets/a3ae1e96-f22f-4440-a653-a9e13b39624e)
+
+![image](https://github.com/user-attachments/assets/a3ae1e96-f22f-4440-a653-a9e13b39624e)
