@@ -20,3 +20,7 @@ df = pd.read_csv("bluebook-for-bulldozers/TrainAndValid.csv",low_memory=False)
 df.info()
 Then we explore our dataset, if it has any null values, or compare the saledate with the SalePrice column and plot it to check the output 
 ![image](https://github.com/user-attachments/assets/0726b9a3-3ca5-4484-a336-1bdc5e926ae3)
+### Parsing Dates
+When we work with time series data, we want to enrich the time and date component as much as possible
+>We can do that by telling pandas which of our columns has dates in it using the `parse_date` parameter
+Now we will import the dataset again but this time with parse_date parameter
