@@ -40,3 +40,13 @@ df_tmp.head(5)
 Up next, we will
 ### Add datetime parameter for `saledate` column
 which is going to help us organize the dataframe a bit more and it will be easier to work with
+df_tmp["saleYear"] = df_tmp.saledate.dt.year
+df_tmp["saleMonth"] = df_tmp.saledate.dt.month
+df_tmp["saleDay"] = df_tmp.saledate.dt.day
+df_tmp["saleDayofWeek"] = df_tmp.saledate.dt.day_of_week
+df_tmp["saleDayofYear"] = df_tmp.saledate.dt.day_of_year
+Now we have enriched our Dataframe with date time features, we can remove the saledate column.
+## Modelling
+> We have done a fair bit of EDA, now we will try to do some modelling and build a model using Scikit learn.
+Remember you can find the right estimator or model using the scikit-learn map
+> https://scikit-learn.org/stable/machine_learning_map.html
