@@ -33,4 +33,10 @@ and now if we check the scatter again, we will see it has better distribution
 
 ![image](https://github.com/user-attachments/assets/a3ae1e96-f22f-4440-a653-a9e13b39624e)
 ### Sort the dataframe by saleDate
-> When working with time series data, its good idea to sort it by date
+> When working with time series data, it's a good idea to sort it by date
+Now we will create a copy of the dataframe so that we can make changes to te copy one and it doesn't mess up the original data
+df_tmp = df.copy()
+df_tmp.head(5)
+Up next, we will
+### Add datetime parameter for `saledate` column
+which is going to help us organize the dataframe a bit more and it will be easier to work with
