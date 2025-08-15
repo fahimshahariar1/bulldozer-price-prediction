@@ -59,4 +59,7 @@ first we will be finding all the labels or columns that has string values
 for label, content in df_tmp.items():
     if pd.api.types.is_string_dtype(content):
         print(label)
-Then 
+Then we will convert them into pandas categories
+for label, content in df_tmp.items():
+    if pd.api.types.is_string_dtype(content):
+        df_tmp[label] = content.astype("category").cat.as_ordered()
