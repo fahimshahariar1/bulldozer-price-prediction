@@ -59,6 +59,7 @@ first we will be finding all the labels or columns that has string values
 for label, content in df_tmp.items():
     if pd.api.types.is_string_dtype(content):
         print(label)
+As we do, you'd see that we have made changes to the columns that have string values, but still our dataset has some missing values that need to be filled. Without which we will again run into some error 
 Then we will convert them into pandas categories
 for label, content in df_tmp.items():
     if pd.api.types.is_string_dtype(content):
