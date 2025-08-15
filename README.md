@@ -46,7 +46,7 @@ df_tmp["saleDay"] = df_tmp.saledate.dt.day
 df_tmp["saleDayofWeek"] = df_tmp.saledate.dt.day_of_week
 df_tmp["saleDayofYear"] = df_tmp.saledate.dt.day_of_year
 Now we have enriched our Dataframe with date time features, we can remove the saledate column.
-## Modelling
+## 5. Modelling
 > We have done a fair bit of EDA, now we will try to do some modelling and build a model using Scikit learn.
 Remember you can find the right estimator or model using the scikit-learn map
 > https://scikit-learn.org/stable/machine_learning_map.html
@@ -55,3 +55,8 @@ So, our first work would be to convert those values, such as strings, to categor
 ### Convert string to categories
 > One way we can turn all of our data into numbers is by converting it into pandas categories
 > You can check few in here https://pandas.pydata.org/pandas-docs/version/1.4.4/reference/general_utility_functions.html
+first we will be finding all the labels or columns that has string values
+for label, content in df_tmp.items():
+    if pd.api.types.is_string_dtype(content):
+        print(label)
+Then 
