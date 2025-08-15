@@ -50,3 +50,8 @@ Now we have enriched our Dataframe with date time features, we can remove the sa
 > We have done a fair bit of EDA, now we will try to do some modelling and build a model using Scikit learn.
 Remember you can find the right estimator or model using the scikit-learn map
 > https://scikit-learn.org/stable/machine_learning_map.html
+Now, once we start our modelling, we will see that there are a lot of errors that we are getting. That's because our data is not in the best shape. There might be non-null values, values that might not be numbers of any kind that we can convert and so forth.
+So, our first work would be to convert those values, such as strings, to categories
+### Convert string to categories
+> One way we can turn all of our data into numbers is by converting it into pandas categories
+> You can check few in here https://pandas.pydata.org/pandas-docs/version/1.4.4/reference/general_utility_functions.html
