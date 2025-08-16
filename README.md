@@ -102,3 +102,37 @@ model = RandomForestRegressor(n_jobs=1, random_state=42)
 #Fit the model
 model.fit(df_tmp.drop("SalePrice", axis = 1), df_tmp["SalePrice"])
 > This will not work because we haven't split it, so although it will give us a higher result but that won't be real
+Now we can't keep on splitting and testing for every score. That's why we will create a function so that we can score the model for different scores and get it all in one.
+create evaluation function
+from sklearn.metrics import mean_squared_log_error, mean_absolute_error, r2_score
+
+def rmsle(y_test, y_preds):
+    return np.sqrt(mean_squared_log_error(y_test, y_preds))
+
+Create function to evaluate model on a few different levels
+def show_scores(model):
+    train_preds = model.predict(X_train)
+    val_preds = model.predict(X_valid)
+    scores = {"Training MAE": mean_absolute_error(y_train, train_preds),
+             "Valid MAE": mean_absolute_error(y_valid, val_preds),
+              "Training RMSLE": rmsle(y_train, train_preds),
+              "Valid RMSLE": rmsle(y_valid, val_preds),
+              "Training R^2": r2_score(y_train, train_preds),
+              "Valid R^2": r2_score(y_valid, val_preds)
+             }
+    return scores
+
+ Now that we have created a custom function, we might as well change the samples we are testing on.
+ Remember we have around 40l+ rows and testing in all of them will take a long time.
+ So, what we can do is to test on specfic samples.
+ Change max sample values
+model = RandomForestRegressor(n_jobs=-1, random_state=42, max_samples=10000)
+
+model.fit(X_train, y_train)
+and based on that we will get a beautiful result
+'Training MAE': 5561.2988092240585,
+ 'Valid MAE': 7177.26365505919,
+ 'Training RMSLE': 0.257745378256977,
+ 'Valid RMSLE': 0.29362638671089003,
+ 'Training R^2': 0.8606658995199189,
+ 'Valid R^2': 0.8320374995090507}
