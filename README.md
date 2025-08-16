@@ -94,5 +94,11 @@ for label, content in df_tmp.items():
         df_tmp[label+"_is_missing"] = pd.isnull(content)
         df_tmp[label] = pd.Categorical(content).codes+1
 The reason why we are using + 1 is because, by default, pandas, when we convert, assigns a number -1 to all those missing values.
-Now if we check, there shouldn't be any more missing values 
+Now, if we check, there shouldn't be any more missing values 
         
+### Now we will again work on building a model, as we don't have any more missing values
+from sklearn.ensemble import RandomForestRegressor
+model = RandomForestRegressor(n_jobs=1, random_state=42)
+#Fit the model
+model.fit(df_tmp.drop("SalePrice", axis = 1), df_tmp["SalePrice"])
+> This will not work because we haven't split it, so although it will give us a higher result but that won't be real
