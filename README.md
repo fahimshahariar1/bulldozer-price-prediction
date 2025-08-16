@@ -82,3 +82,17 @@ for label, content in df_tmp.items():
         if pd.isnull(content).sum():
           df_tmp[label+"_is_mssing)"] = pd.isnull(content)
           df_tmp[label] = content.fillna(content.median())**
+Now, although we have filled all the missing numerical values, we still have some categorical variables that have missing values
+## Filling and turning categorical variables into numbers
+> #Check for columns that aren't numeric
+for label, content in df_tmp.items():
+    if not pd.api.types.is_numeric_dtype(content):
+        print(label)
+> #Turn categorical variables into numbers and fill missing
+for label, content in df_tmp.items():
+    if not pd.api.types.is_numeric_dtype(content):
+        df_tmp[label+"_is_missing"] = pd.isnull(content)
+        df_tmp[label] = pd.Categorical(content).codes+1
+The reason why we are using + 1 is because, by default, pandas, when we convert, assigns a number -1 to all those missing values.
+Now if we check, there shouldn't be any more missing values 
+        
